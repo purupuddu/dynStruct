@@ -2,7 +2,7 @@
 #define ALLOCS_H_
 
 #include "tree.h"
-
+#define OUT
 // store nb_hit and size of the hit by pc on access instruction
 typedef struct orig_s
 {

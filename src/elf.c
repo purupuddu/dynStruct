@@ -87,6 +87,7 @@ void get_tmp_data_64(Elf64_Ehdr *elf_hdr,
 	  tmp_data->size_seg = (seg->p_memsz / DYNAMO_ALIGN) * DYNAMO_ALIGN +
 	    (seg->p_memsz % DYNAMO_ALIGN ? DYNAMO_ALIGN : 0);
 	  tmp_data->seg_perm = seg->p_flags;
+	  tmp_data->sect_offset -= seg->p_offset;
 	  break;
 	}
     }

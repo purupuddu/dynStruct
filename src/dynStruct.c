@@ -19,6 +19,7 @@
 malloc_t  *old_blocks = NULL;
 tree_t	  *active_blocks = NULL;
 void      *lock;
+int	  tls_stack_idx;
 
 static void thread_exit_event(void *drcontext)
 {
@@ -211,7 +212,7 @@ DR_EXPORT void dr_client_main(client_id_t __attribute__((unused))id,
 
   if(!parse_arg(argc, (char **)argv))
     dr_abort();
-  dr_register_exit_event(&exit_event);
+  drmgr_register_exit_event(&exit_event);
   if (!drmgr_register_module_load_event(&load_event) ||
       // only use to remove plt from plt tree if a library is unload at runtime
       !drmgr_register_module_unload_event(&unload_event) ||
