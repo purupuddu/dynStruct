@@ -1,0 +1,4 @@
+CompileFlags:
+  Add:
+    - "--include-directory=/home/andrea/installs/dynamoRio/DynamoRIO-Linux-11.91.20771/include"
+    - "--include-directory=/home/andrea/installs/dynamoRio/DynamoRIO-Linux-11.91.20771/ext/include"
